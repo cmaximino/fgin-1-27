@@ -19,6 +19,10 @@ When you execute code within the notebook, the results appear beneath the code.
     install.packages("RCurl")
     library(RCurl)
     }
+    if(!require(plyr)){
+    install.packages("plyr")
+    library(plyr)
+    }
     ```
 
 -   Load data
@@ -37,41 +41,47 @@ When you execute code within the notebook, the results appear beneath the code.
 
 ``` {r}
 anova_TW <- aov(TW ~ Drug * Dose, exp1) ##use aov(object) to test the omnibus hypothesis: Are main effects or interaction effects present in the independent variables?
+summary(anova_TW)
 TukeyHSD(anova_TW) #Tukey multiple comparisons of means
 ```
 
-1.  Risk assessment
+2.  Risk assessment
 
 ``` {r}
 anova_RA <- aov(Risk.assessment ~ Drug * Dose, exp1) ##use aov(object) to test the omnibus hypothesis: Are main effects or interaction effects present in the independent variables?
+summary(anova_RA)
 TukeyHSD(anova_RA) #Tukey multiple comparisons of means
 ```
 
-1.  Thigmotaxis
+3.  Thigmotaxis
 
 ``` {r}
 anova_Th <- aov(Thigmotaxis ~ Drug * Dose, exp1) ##use aov(object) to test the omnibus hypothesis: Are main effects or interaction effects present in the independent variables?
+summary(anova_Th)
 TukeyHSD(anova_RA) #Tukey multiple comparisons of means
 ```
 
-1.  Freezing
+4.  Freezing
 
 ``` {r}
 anova_Fr <- aov(Freezing ~ Drug * Dose, exp1) ##use aov(object) to test the omnibus hypothesis: Are main effects or interaction effects present in the independent variables?
+summary(anova_Fr)
 TukeyHSD(anova_RA) #Tukey multiple comparisons of means
 ```
 
-1.  Erratic swimming
+5.  Erratic swimming
 
 ``` {r}
 anova_ES <- aov(Erratic ~ Drug * Dose, exp1) ##use aov(object) to test the omnibus hypothesis: Are main effects or interaction effects present in the independent variables?
+summary(anova_ES)
 TukeyHSD(anova_RA) #Tukey multiple comparisons of means
 ```
 
-1.  Transitions to white
+6.  Transitions to white
 
 ``` {r}
 anova_Tr <- aov(Crossings ~ Drug * Dose, exp1) ##use aov(object) to test the omnibus hypothesis: Are main effects or interaction effects present in the independent variables?
+summary(anova_Tr)
 TukeyHSD(anova_RA) #Tukey multiple comparisons of means
 ```
 
